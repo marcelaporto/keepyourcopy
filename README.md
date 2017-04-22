@@ -24,7 +24,7 @@ Eg.
   ]
 }`
 
-Use browser actions to put icons in the main Google Chrome toolbar, to the right of the address bar. In addition to its icon, a browser action can also have a tooltip, a badge, and a popup. Choose a browser action when the extension is relevant to most pages. 
+Use browser actions to put icons in the main Google Chrome toolbar, to the right of the address bar. In addition to its icon, a browser action can also have a tooltip, a badge, and a popup. Choose a browser action when the extension is relevant to most pages.
   - Popup: If a browser action has a popup, the popup appears when the user clicks the icon. The popup can contain any HTML contents that you like, and it's automatically sized to fit its contents. To add a popup to your browser action, create an HTML file with the popup's contents. Specify the HTML file in the default_popup field of browser_action in the manifest, or call the browserAction.setPopup method.
 
 [More about manifest file format](https://developer.chrome.com/extensions/manifest)
@@ -49,3 +49,6 @@ Title: What appears when you hover through the icon - String.
 Extensions that you download from the Chrome Web Store are packaged up as .crx files, which is great for distribution, but not so great for development.
 
 **Overview: in your repo, you should have: 01 JSON file (manifest), 01 PNG file (icon), 01 HTML file (popup), 01 JS file (logic)**
+
+
+<div>Icons made by <a href="http://www.flaticon.com/authors/dinosoftlabs" title="DinosoftLabs">DinosoftLabs</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
