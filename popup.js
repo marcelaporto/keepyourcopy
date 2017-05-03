@@ -1,5 +1,3 @@
-copies = []
-
 // var mystore = Rhaboo.persistent("Some unique name");
 
 // Code for popup.html
@@ -9,31 +7,20 @@ document.addEventListener("DOMContentLoaded", function() {
   document.body.style.backgroundColor= colors[Math.floor ( Math.random() * colors.length )]
   console.log("document",document)
 
+  // chrome.tabs.onMessage.addListener(
+  //   function(request, sender, sendResponse) {
+  //     newarray = request.greeting
+  //     console.log(sender.tab ?
+  //                 "from a content script:" + sender.tab.url :
+  //                 "from the extension");
+  //       sendResponse({farewell: "BACK TO THE TOP"});
+  // });
+
+
   var data = document.getElementById("status")
-  data.innerHTML += "<li>"+ copies +"</li><br>"
-  data.innerHTML += "<li>"+ copies.length +"</li><br>"
+  data.innerHTML += "<li> "+ localStorage["total_elements"].length +" </li><br>"
 
-});
 
-// Code for browser
-document.addEventListener('copy', function(e){
-      var copied = (window.getSelection().toString())
-      console.log("Inside the thing")
-      copies.push(copied)
-      console.log(copies)
 
-      localStorage.yourObject = JSON.stringify(copies);
-      var obj = JSON.parse(localStorage.yourObject || "{}");
-      console.log(obj)
-      // console.log(mystore)
 
-      // calls background function
-      // var otherWindows = chrome.extension.getBackgroundPage();
-      // console.log(otherWindows.backgroundFunction());
-      alert(copies.length)
-      chrome.runtime.sendMessage({greeting: obj}, function(response) {
-        console.log(response.farewell);
-      });
-
-      return copies
 });
