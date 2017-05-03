@@ -23,7 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function populateScript(array) {
   var data = document.getElementById("status")
+  data.innerHTML = ""
   for(var i = 0; i < array.length; i++){
     data.innerHTML += "<li> "+ array[i] +" </li><br>"
   }
 }
+
+// document.getElementById("clear-data").addEventListener("click", function(){
+//   alert("I'm here")
+//   localStorage.clear();
+// });
