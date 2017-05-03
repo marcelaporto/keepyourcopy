@@ -15,5 +15,20 @@
     "clipboardRead",
     "clipboardWrite",
     "https://ajax.googleapis.com/"
-  ]
+  ],
+
+  "content_scripts": [
+    { "matches": [
+        "http://*/*",
+        "https://*/*"
+       ],
+      "js": ["popup.js"],
+      "run_at": "document_end"
+    }
+  ],
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
 }
