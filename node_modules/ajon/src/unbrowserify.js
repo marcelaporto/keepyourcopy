@@ -1,0 +1,1 @@
+global.Ajon = require('./ajon');

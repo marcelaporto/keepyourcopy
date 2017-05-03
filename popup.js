@@ -1,29 +1,26 @@
-var array = []
-
-
-
-// Code for browser
-document.addEventListener('copy', function(e){
-      var copied = (window.getSelection().toString())
-      console.log("Inside the thing")
-      array.push(copied)
-      console.log(array)
-
-      localStorage.yourObject = JSON.stringify(array);
-      var obj = JSON.parse(localStorage.yourObject || "{}");
-      console.log(obj)
-      // data.append("<li>"+ copied +"</li><br>")
-});
-
+// var mystore = Rhaboo.persistent("Some unique name");
 
 // Code for popup.html
 document.addEventListener("DOMContentLoaded", function() {
-  chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
-      data.innerHTML += "<li> "+ obj +"</li><br>";
-  });
-  document.body.style.backgroundColor="green"
+  var colors = ["green", "red", "blue", "purple", "yellow"]
+
+  document.body.style.backgroundColor= colors[Math.floor ( Math.random() * colors.length )]
+  console.log("document",document)
+
+  // chrome.tabs.onMessage.addListener(
+  //   function(request, sender, sendResponse) {
+  //     newarray = request.greeting
+  //     console.log(sender.tab ?
+  //                 "from a content script:" + sender.tab.url :
+  //                 "from the extension");
+  //       sendResponse({farewell: "BACK TO THE TOP"});
+  // });
+
 
   var data = document.getElementById("status")
-  data.innerHTML += "<li> IS THIS WORKING </li><br>"
-  data.innerHTML += "<li>" + array + "</li><br>"
+  data.innerHTML += "<li> "+ localStorage["total_elements"].length +" </li><br>"
+
+
+
+
 });
