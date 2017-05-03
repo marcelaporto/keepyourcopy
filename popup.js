@@ -1,29 +1,39 @@
-var array = []
+copies = []
 
+// var mystore = Rhaboo.persistent("Some unique name");
 
+// Code for popup.html
+document.addEventListener("DOMContentLoaded", function() {
+  var colors = ["green", "red", "blue", "purple", "yellow"]
+
+  document.body.style.backgroundColor= colors[Math.floor ( Math.random() * colors.length )]
+  console.log("document",document)
+
+  var data = document.getElementById("status")
+  data.innerHTML += "<li>"+ copies +"</li><br>"
+  data.innerHTML += "<li>"+ copies.length +"</li><br>"
+
+});
 
 // Code for browser
 document.addEventListener('copy', function(e){
       var copied = (window.getSelection().toString())
       console.log("Inside the thing")
-      array.push(copied)
-      console.log(array)
+      copies.push(copied)
+      console.log(copies)
 
-      localStorage.yourObject = JSON.stringify(array);
+      localStorage.yourObject = JSON.stringify(copies);
       var obj = JSON.parse(localStorage.yourObject || "{}");
       console.log(obj)
-      // data.append("<li>"+ copied +"</li><br>")
-});
+      // console.log(mystore)
 
+      // calls background function
+      // var otherWindows = chrome.extension.getBackgroundPage();
+      // console.log(otherWindows.backgroundFunction());
+      alert(copies.length)
+      chrome.runtime.sendMessage({greeting: obj}, function(response) {
+        console.log(response.farewell);
+      });
 
-// Code for popup.html
-document.addEventListener("DOMContentLoaded", function() {
-  chrome.runtime.sendMessage({greeting: "hello"}, function(response) {
-      data.innerHTML += "<li> "+ obj +"</li><br>";
-  });
-  document.body.style.backgroundColor="green"
-
-  var data = document.getElementById("status")
-  data.innerHTML += "<li> IS THIS WORKING </li><br>"
-  data.innerHTML += "<li>" + array + "</li><br>"
+      return copies
 });
