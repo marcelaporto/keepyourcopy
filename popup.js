@@ -16,11 +16,14 @@ document.addEventListener("DOMContentLoaded", function() {
   //       sendResponse({farewell: "BACK TO THE TOP"});
   // });
 
-
-  var data = document.getElementById("status")
-  data.innerHTML += "<li> "+ localStorage["total_elements"].length +" </li><br>"
-
-
-
+  arrayOfCopies = localStorage["total_elements"].split(",")
+  populateScript(arrayOfCopies)
 
 });
+
+function populateScript(array) {
+  var data = document.getElementById("status")
+  for(var i = 0; i < array.length; i++){
+    data.innerHTML += "<li> "+ array[i] +" </li><br>"
+  }
+}
