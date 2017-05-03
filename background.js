@@ -27,7 +27,7 @@
   chrome.runtime.onMessage.addListener(
       function(request, sender, sendResponse){
          localStorage["total_elements"] = request.total_elements;
-         sendResponse({farewell: "Back"})
+         sendResponse({farewell: localStorage["total_elements"]})
       }
   );
 
