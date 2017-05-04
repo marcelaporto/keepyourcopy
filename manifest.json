@@ -12,8 +12,6 @@
   },
   "permissions": [
     "activeTab",
-    "clipboardRead",
-    "clipboardWrite",
     "https://ajax.googleapis.com/"
   ],
 
