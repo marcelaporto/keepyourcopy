@@ -3,12 +3,12 @@
 // Code for popup.html
 document.addEventListener("DOMContentLoaded", function() {
 
-  // clearData;
-
   var colors = ["green", "red", "blue", "purple", "yellow"]
 
   document.body.style.backgroundColor= colors[Math.floor ( Math.random() * colors.length )]
   console.log("document",document)
+
+  clearData();
 
   // chrome.tabs.onMessage.addListener(
   //   function(request, sender, sendResponse) {
@@ -26,16 +26,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function populateScript(array) {
   var data = document.getElementById("status")
-  for(var i = 0; i < array.length; i++){
-    alert("populating")
+  alert("populating")
+  for(var i = array.length; i > 0; i--){
     data.innerHTML += "<li> "+ array[i] +" </li><br>"
   }
 }
 
-// function clearData(){
-//   document.getElementById("clear-data").addEventListener("click", function(){
-//     alert("YO")
-//     // var data = document.getElementById("status")
-//     // data.innerHTML = ""
-//   });
+var clearData = function(){
+  document.getElementById("clear-data").addEventListener("click", function(){
+    localStorage["total_elements"] = ""
+  });
 }
