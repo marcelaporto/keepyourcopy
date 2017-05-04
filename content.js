@@ -1,5 +1,4 @@
 copies = []
-
 // Code for browser
 document.addEventListener('copy', function(e){
       var copied = (window.getSelection().toString())
@@ -9,8 +8,6 @@ document.addEventListener('copy', function(e){
       // sets unique key value to insert into localStorage
       localStorage[Date.now()]= JSON.stringify(copied);
       var obj = parseLocalStorage();
-      console.log(obj)
-      // console.log(mystore)
 
       // calls background function
       // var otherWindows = chrome.extension.getBackgroundPage();
@@ -23,6 +20,7 @@ document.addEventListener('copy', function(e){
 function parseLocalStorage() {
   var parsedData = []
   arrayOfKeys = Object.keys(localStorage)
+  alert("doing stuff")
   for(var i = 0; i < arrayOfKeys.length; i ++){
     parsedData.push(JSON.parse(localStorage[arrayOfKeys[i]]))
   }
