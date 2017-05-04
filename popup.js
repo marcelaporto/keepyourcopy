@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function populateScript(array) {
   var data = document.getElementById("status")
-  data.innerHTML = ""
+  alert("I'm here")
   for(var i = 0; i < array.length; i++){
     data.innerHTML += "<li> "+ array[i] +" </li><br>"
   }
