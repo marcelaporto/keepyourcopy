@@ -3,10 +3,10 @@
 // Code for popup.html
 document.addEventListener("DOMContentLoaded", function() {
 
-  var colors = ["green", "red", "blue", "purple", "yellow"]
-
-  document.body.style.backgroundColor= colors[Math.floor ( Math.random() * colors.length )]
-  console.log("document",document)
+  // var colors = ["green", "red", "blue", "purple", "yellow"]
+  //
+  // document.body.style.backgroundColor= colors[Math.floor ( Math.random() * colors.length )]
+  // console.log("document",document)
 
   clearData();
 
