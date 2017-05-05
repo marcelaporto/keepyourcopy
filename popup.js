@@ -1,12 +1,5 @@
-// var mystore = Rhaboo.persistent("Some unique name");
-
 // Code for popup.html
 document.addEventListener("DOMContentLoaded", function() {
-
-  // var colors = ["green", "red", "blue", "purple", "yellow"]
-  //
-  // document.body.style.backgroundColor= colors[Math.floor ( Math.random() * colors.length )]
-  // console.log("document",document)
 
   clearData();
 
@@ -27,5 +20,9 @@ function populateScript(array) {
 var clearData = function(){
   document.getElementById("clear-data").addEventListener("click", function(){
     localStorage["total_elements"] = ""
+    chrome.runtime.sendMessage({total_elements: "clear"}, function(response) {
+      alert(response)
+      console.log("Response",response);
+    });
   });
 }
