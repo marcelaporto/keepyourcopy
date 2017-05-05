@@ -10,15 +10,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
   clearData();
 
-  // chrome.tabs.onMessage.addListener(
-  //   function(request, sender, sendResponse) {
-  //     newarray = request.greeting
-  //     console.log(sender.tab ?
-  //                 "from a content script:" + sender.tab.url :
-  //                 "from the extension");
-  //       sendResponse({farewell: "BACK TO THE TOP"});
-  // });
-
   arrayOfCopies = localStorage["total_elements"].split(",")
   populateScript(arrayOfCopies)
 
@@ -26,17 +17,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function populateScript(array) {
   var data = document.getElementById("status")
+  alert(localStorage["total_elements"].split(",").length)
   for(var i = (array.length - 1) ; i > 0; i--){
     data.innerHTML += "<li> "+ array[i] +" </li><br>"
-    break if i == (array.length - 15)
+    if (i === (array.length - 15)) { break;}
   }
 }
 
 var clearData = function(){
   document.getElementById("clear-data").addEventListener("click", function(){
     localStorage["total_elements"] = ""
-    // chrome.runtime.sendMessage({message: "clearLocalStorage"}, function(response) {
-    //   console.log("Response",response);
-    // });
   });
 }
