@@ -26,14 +26,17 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function populateScript(array) {
   var data = document.getElementById("status")
-  alert("populating")
-  for(var i = array.length; i > 0; i--){
+  for(var i = (array.length - 1) ; i > 0; i--){
     data.innerHTML += "<li> "+ array[i] +" </li><br>"
+    break if i == (array.length - 15)
   }
 }
 
 var clearData = function(){
   document.getElementById("clear-data").addEventListener("click", function(){
     localStorage["total_elements"] = ""
+    // chrome.runtime.sendMessage({message: "clearLocalStorage"}, function(response) {
+    //   console.log("Response",response);
+    // });
   });
 }
