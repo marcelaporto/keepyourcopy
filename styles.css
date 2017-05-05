@@ -1,0 +1,38 @@
+html{
+  border-left: solid 4px;
+  border-right: solid 4px;
+  border-color: #01808C;
+}
+body {
+  background-color: white;
+  font-size: 12px;
+  padding: 0px;
+}
+
+h4 {
+  text-align: center;
+  font-size: 18px;
+  margin: -25px 10px 0px 10px;
+  color: #01808C;
+
+}
+
+ol {
+  margin-top: -15px;
+  margin-left: -18px;
+  white-space: normal;
+}
+
+button {
+     background:none!important;
+     color:inherit;
+     border:none;
+     padding:0!important;
+     font: inherit;
+     /*border is optional*/
+     border-bottom:1px solid #444;
+     cursor: pointer;
+     margin: 0;
+     padding: 0;
+     outline: none;
+}
