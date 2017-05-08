@@ -1,0 +1,44 @@
+html{
+  border-left: solid 4px;
+  border-right: solid 4px;
+  border-color: #01808C;
+}
+body {
+  background-color: #faf9f4;
+  font-size: 12px;
+  padding: 0px;
+}
+
+h4 {
+  font-variant: small-caps;
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  text-align: center;
+  font-size: 20px;
+  margin: -25px 10px 0px 10px;
+  color: #01808C;
+
+}
+
+ol {
+  font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+  font-weight: 500;
+  pading: 0px;
+  margin-top: -14px;
+  margin-left: -20px;
+  white-space: normal;
+}
+
+button {
+     background:none!important;
+     color: #01808C;
+     font-weight: bolder;
+     border:none;
+     padding:0!important;
+     font: inherit;
+     /*border is optional*/
+     border-bottom:1px solid #444;
+     cursor: pointer;
+     margin: 0;
+     padding: 0;
+     outline: none;
+}
