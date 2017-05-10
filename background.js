@@ -6,10 +6,10 @@ chrome.runtime.onMessage.addListener(
             title: 'All your copies were deleted',
             message: 'All your copies were deleted'
           })
-          alert("DID THE THING")
+          // alert("DID THE THING")
           sendResponse({farewell: "DID THE THING"})
         }else {
-          localStorage["total_elements"] += (", " + request.total_elements);
+          localStorage["total_elements"] += ("___ " + request.total_elements);
           sendResponse({farewell: localStorage["total_elements"]})
         }
       }
