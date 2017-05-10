@@ -1,7 +1,7 @@
 // Code for popup.html
 document.addEventListener("DOMContentLoaded", function() {
 
-  clearData();
+  // clearData();
 
   arrayOfCopies = localStorage["total_elements"].split("___")
   populateScript(arrayOfCopies)
@@ -17,12 +17,12 @@ function populateScript(array) {
   }
 }
 
-var clearData = function(){
-  document.getElementById("clear-data").addEventListener("click", function(){
-    localStorage["total_elements"] = ""
-    chrome.runtime.sendMessage({total_elements: "clear"}, function(response) {
-      alert(response)
-      console.log("Response",response);
-    });
-  });
-}
+// var clearData = function(){
+//   document.getElementById("clear-data").addEventListener("click", function(){
+//     localStorage["total_elements"] = ""
+//     chrome.runtime.sendMessage({total_elements: "clear"}, function(response) {
+//       alert(response)
+//       console.log("Response",response);
+//     });
+//   });
+// }
