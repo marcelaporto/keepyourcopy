@@ -9,7 +9,7 @@ chrome.runtime.onMessage.addListener(
           // alert("DID THE THING")
           sendResponse({farewell: "DID THE THING"})
         }else {
-          localStorage["total_elements"] += ("⚙ " + request.total_elements);
+          localStorage["total_elements"] += ("___ " + request.total_elements);
           sendResponse({farewell: localStorage["total_elements"]})
         }
       }

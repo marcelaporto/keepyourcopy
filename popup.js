@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   clearData();
 
-  arrayOfCopies = localStorage["total_elements"].split("⚙")
+  arrayOfCopies = localStorage["total_elements"].split("___")
   populateScript(arrayOfCopies)
 
 });
 
 function populateScript(array) {
   var data = document.getElementById("status")
-  // alert(localStorage["total_elements"].split(",").length)
+  alert(array.length)
   for(var i = (array.length - 1) ; i > 0; i--){
     data.innerHTML += "<li> "+ array[i] +" </li><br>"
     if (i === (array.length - 15)) { break;}
