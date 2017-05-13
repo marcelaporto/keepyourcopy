@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 function populateScript(array) {
   var data = document.getElementById("status")
-  alert(array.length)
+  // alert(array.length)
   for(var i = (array.length - 1) ; i > 0; i--){
     data.innerHTML += "<li> "+ array[i] +" </li><br>"
     if (i === (array.length - 15)) { break;}
